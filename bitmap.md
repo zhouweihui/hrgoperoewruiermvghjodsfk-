@@ -59,6 +59,8 @@ ByteArrayOutputStream stream = new ByteArrayOutputStream();
 [1]:https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/image-cache/universal-image-loader/image/uil-flow.png
 ## 模块
 整个库分为ImageLoaderEngine，Cache及ImageDownloader，ImageDecoder，BitmapDisplayer，BitmapProcessor五大模块，其中Cache分为MemoryCache和DiskCache两部分。
-简单的讲就是ImageLoader收到加载及显示图片的任务，并将它交给ImageLoaderEngine，ImageLoaderEngine分发任务到具体线程池去执行，任务通过Cache及ImageDownloader获取图片，中间可能经过BitmapProcessor和ImageDecoder处理，最终转换为Bitmap交给BitmapDisplayer在ImageAware中显示。
+简单的讲就是ImageLoader收到加载及显示图片的任务，并将它交给ImageLoaderEngine，ImageLoaderEngine分发任务到具体线程池去执行。
+任务通过Cache及ImageDownloader获取图片，中间可能经过BitmapProcessor和ImageDecoder处理，最终转换为Bitmap交给BitmapDisplayer在ImageAware中显示。
+
 ![2]
 [2]:https://raw.githubusercontent.com/android-cn/android-open-project-analysis/master/tool-lib/image-cache/universal-image-loader/image/overall-design.png
